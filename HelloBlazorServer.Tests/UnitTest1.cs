@@ -9,10 +9,23 @@ public class UnitTest1 : TestContext
     [Fact]
     public void Counter初期値は0で表示される()
     {
-        // Counterコンポーネントをレンダリング
+        // Arrage
         var cut = RenderComponent<Counter>();
 
-        // 表示内容を検証
+        // Assert
         Assert.Contains("Current count: 0", cut.Markup);
+    }
+
+    [Fact]
+    public void ボタンクリックでカウントが1増える()
+    {
+        // Arrange
+        var cut = RenderComponent<Counter>();
+
+        // Act
+        cut.Find("button").Click();
+
+        // Assert
+        Assert.Contains("Current count: 1", cut.Markup);
     }
 }
