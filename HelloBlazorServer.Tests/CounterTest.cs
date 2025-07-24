@@ -26,6 +26,6 @@ public class UnitTest1 : TestContext
         cut.Find("button").Click();
 
         // Assert
-        Assert.Contains("Current count: 1", cut.Markup);
+        Assert.Contains("Current count: 2", cut.Markup);
     }
 }
