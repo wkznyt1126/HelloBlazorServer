@@ -1,5 +1,5 @@
 ﻿using Bunit;
-using HelloBlazorServer.Components.Pages; // Counter.razorのnamespaceに合わせて調整
+using HelloBlazorServer.Components.Pages;
 using Xunit;
 
 namespace HelloBlazorServer.Tests;
