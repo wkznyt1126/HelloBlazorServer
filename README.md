@@ -15,6 +15,3 @@ Blazor Serverを練習するPJ
 ### e2e
 
 * ```dotnet test HelloBlazorServer.Tests/e2e/e2e.csproj```
-
-### playwright
-* 
