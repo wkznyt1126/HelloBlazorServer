@@ -1,5 +1,5 @@
 ﻿using Bunit;
-using HelloBlazorServer.Components.Pages;
+using HelloBlazorServer.Pages;
 
 namespace HelloBlazorServer.Tests;
 

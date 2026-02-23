@@ -9,8 +9,30 @@
 <PageTitle>Counter</PageTitle>
 <h1>Counter</h1>
 <p role="status">Current count: @currentCount</p>
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-<button class="btn btn-secondary" @onclick="DecrementCount">引く(JS)</button>
+
+<button
+    class="btn btn-success"
+    @onclick="MultiplyCount"
+    >×2
+</button>
+
+<button
+    class="btn btn-primary"
+    @onclick="IncrementCount"
+    >+1
+</button>
+
+<button
+    class="btn btn-success"
+    @onclick="DivideCount"
+    >÷2
+</button>
+
+<button
+    class="btn btn-secondary"
+    @onclick="DecrementCount"
+    >-1
+</button>
 
 @code {
     private int currentCount = 0;
@@ -19,9 +41,21 @@
         currentCount++;
     }
 
-    private async Task DecrementCount()
+    private void DecrementCount()
     {
         // currentCount = await JS.InvokeAsync<int>("counterLogic.subtract", currentCount);
         currentCount --;
+    }
+
+    // 掛け算
+    private void MultiplyCount()
+    {
+        currentCount *= 2;
+    }
+
+    // 割り算
+    private void DivideCount()
+    {
+        currentCount /= 2;
     }
 }

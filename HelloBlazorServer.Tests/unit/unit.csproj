@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HelloBlazorServer\HelloBlazorServer.csproj" />
+    <ProjectReference Include="..\..\HelloBlazorServer\HelloBlazorServer.csproj" />
   </ItemGroup>
 
 </Project>
