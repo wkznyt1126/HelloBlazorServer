@@ -21,6 +21,7 @@
 
     private async Task DecrementCount()
     {
-        currentCount = await JS.InvokeAsync<int>("counterLogic.subtract", currentCount);
+        // currentCount = await JS.InvokeAsync<int>("counterLogic.subtract", currentCount);
+        currentCount --;
     }
 }
