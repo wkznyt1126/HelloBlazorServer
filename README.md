@@ -3,12 +3,18 @@ Blazor Serverを練習するPJ
 
 ## 実行方法
 * ```dotnet run```
-* ```dotnet run --proect path```
+* ```dotnet run --project HelloBlazorServer/HelloBlazorServer.csproj```
 * ```dotnet run --urls "http://0.0.0.0:xxxx"```
 
-## テスト
-* ```dotonet test```
-* ```dotnet test path```
+## test
+
+### unit
+
+* ```dotnet test HelloBlazorServer.Tests/unit/unit.csproj```
+
+### e2e
+
+* ```dotnet test HelloBlazorServer.Tests/e2e/e2e.csproj```
 
 ### playwright
 * 
