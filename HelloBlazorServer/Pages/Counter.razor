@@ -1,0 +1,26 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+@inject IJSRuntime JS
+
+<PageTitle>Counter</PageTitle>
+<h1>Counter</h1>
+<p role="status">Current count: @currentCount</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-secondary" @onclick="DecrementCount">引く(JS)</button>
+
+@code {
+    private int currentCount = 0;
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private async Task DecrementCount()
+    {
+        currentCount = await JS.InvokeAsync<int>("counterLogic.subtract", currentCount);
+    }
+}

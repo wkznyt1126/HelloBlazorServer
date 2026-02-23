@@ -1,0 +1,44 @@
+@using BlazingStory
+@using HelloBlazorServer.Components
+@attribute [Stories("Components/UserCard")]
+
+<Stories TComponent="UserCard">
+    
+    <Story Name="Default">
+        <Template>
+            <UserCard @attributes="context.Args" />
+        </Template>
+    </Story>
+    
+    <Story Name="Admin User">
+        <Template>
+            <UserCard Name="田中太郎" 
+                      Email="tanaka@example.com" 
+                      Role="Admin"
+                      AvatarUrl="https://randomuser.me/api/portraits/men/1.jpg"
+                      @attributes="context.Args" />
+        </Template>
+    </Story>
+    
+    <Story Name="Regular User">
+        <Template>
+            <UserCard Name="佐藤花子" 
+                      Email="sato@example.com" 
+                      Role="User"
+                      AvatarUrl="https://randomuser.me/api/portraits/women/2.jpg"
+                      @attributes="context.Args" />
+        </Template>
+    </Story>
+    
+    <Story Name="Guest (No Actions)">
+        <Template>
+            <UserCard Name="山田ゲスト" 
+                      Email="guest@example.com" 
+                      Role="Guest"
+                      ShowActions="false"
+                      AvatarUrl="https://randomuser.me/api/portraits/men/3.jpg"
+                      @attributes="context.Args" />
+        </Template>
+    </Story>
+    
+</Stories>

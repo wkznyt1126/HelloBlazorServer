@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="HelloBlazorServer.Stories/HelloBlazorServer.Stories.csproj" />
+  <!-- <Project Path="HelloBlazorServer.Tests/HelloBlazorServer.Tests.csproj" /> -->
+  <Project Path="HelloBlazorServer/HelloBlazorServer.csproj" />
+</Solution>

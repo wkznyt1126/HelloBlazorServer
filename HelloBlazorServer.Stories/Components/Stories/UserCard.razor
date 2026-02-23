@@ -1,0 +1,80 @@
+@using Microsoft.AspNetCore.Components
+
+<div class="user-card">
+    <div class="user-avatar">
+        <img src="@AvatarUrl" alt="@Name" />
+    </div>
+    <div class="user-info">
+        <h3 class="user-name">@Name</h3>
+        <p class="user-email">@Email</p>
+        <p class="user-role @RoleClass">@Role</p>
+        @if (ShowActions)
+        {
+            <div class="user-actions">
+                <button class="btn btn-primary" @onclick="OnEdit">編集</button>
+                <button class="btn btn-danger" @onclick="OnDelete">削除</button>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .user-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 10px;
+        display: flex;
+        max-width: 400px;
+    }
+    
+    .user-avatar img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    
+    .user-info {
+        flex: 1;
+    }
+    
+    .user-name {
+        margin: 0 0 5px 0;
+        color: #333;
+    }
+    
+    .user-email {
+        margin: 0 0 10px 0;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .user-role {
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    
+    .admin { background-color: #ff6b6b; color: white; }
+    .user { background-color: #4ecdc4; color: white; }
+    .guest { background-color: #95a5a6; color: white; }
+    
+    .user-actions button {
+        margin-right: 10px;
+    }
+</style>
+
+@code {
+    [Parameter] public string Name { get; set; } = "Unknown User";
+    [Parameter] public string Email { get; set; } = "user@example.com";
+    [Parameter] public string Role { get; set; } = "User";
+    [Parameter] public string AvatarUrl { get; set; } = "https://via.placeholder.com/60";
+    [Parameter] public bool ShowActions { get; set; } = true;
+    [Parameter] public EventCallback OnEdit { get; set; }
+    [Parameter] public EventCallback OnDelete { get; set; }
+
+    private string RoleClass => Role.ToLower();
+}
