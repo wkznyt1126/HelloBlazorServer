@@ -43,7 +43,7 @@ public class CounterE2ETests : PageTest
     {
         await Page.GotoAsync(TopPage);
 
-        // ページ遷移（C# の表現に修正）
+        // ページ遷移
         await Page.GetByRole(AriaRole.Navigation).GetByText("Counter").ClickAsync();
 
         // 初期値の検証
