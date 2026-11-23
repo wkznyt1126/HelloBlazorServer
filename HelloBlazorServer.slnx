@@ -5,6 +5,6 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="HelloBlazorServer.Stories/HelloBlazorServer.Stories.csproj" />
-  <!-- <Project Path="HelloBlazorServer.Tests/HelloBlazorServer.Tests.csproj" /> -->
+  <Project Path="HelloBlazorServer.Tests/unit/unit.csproj" />
   <Project Path="HelloBlazorServer/HelloBlazorServer.csproj" />
 </Solution>
