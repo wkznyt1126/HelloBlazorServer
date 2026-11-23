@@ -10,7 +10,7 @@ public class CounterButtonTests : BunitContext
     {
         var cut = Render<CounterButton>(p => p.Add(x => x.Label, "追加"));
 
-        Assert.Equal("1", cut.Find(".count").TextContent);
+        Assert.Equal("0", cut.Find(".count").TextContent);
         Assert.Equal("追加", cut.Find("button").TextContent);
     }
 
