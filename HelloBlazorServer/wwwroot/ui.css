@@ -1,0 +1,94 @@
+/* =========================================================
+   共通 UI スタイル（Blazor / .NET 系の紫ベース）
+   置き場所: wwwroot/css/ui.css
+   ========================================================= */
+
+/* ---- デザイントークン ---------------------------------- */
+:root {
+    --ui-primary: #512bd4;          /* .NET パープル */
+    --ui-primary-hover: #4321b0;
+    --ui-primary-active: #36198f;
+    --ui-primary-soft: #ede8fb;     /* 薄い紫（背景用） */
+    --ui-primary-text: #ffffff;
+
+    --ui-text: #1f1f29;
+    --ui-text-muted: #6b6b80;
+    --ui-border: #d9d3ef;
+    --ui-surface: #ffffff;
+
+    --ui-disabled-bg: #e4e2ec;
+    --ui-disabled-text: #9a98aa;
+
+    --ui-radius: 8px;
+    --ui-radius-pill: 999px;
+    --ui-gap: 0.75rem;
+    --ui-font-size: 0.95rem;
+    --ui-transition: 120ms ease-out;
+    --ui-focus-ring: 0 0 0 3px rgba(81, 43, 212, 0.35);
+}
+
+/* ---- 共通ボタン ---------------------------------------- */
+.ui-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-width: 4.5rem;
+    padding: 0.5rem 1.1rem;
+    border: none;
+    border-radius: var(--ui-radius);
+    background: var(--ui-primary);
+    color: var(--ui-primary-text);
+    font-size: var(--ui-font-size);
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(31, 31, 41, 0.12);
+    transition: background-color var(--ui-transition),
+                transform var(--ui-transition),
+                box-shadow var(--ui-transition);
+}
+
+.ui-btn:hover:not(:disabled) {
+    background: var(--ui-primary-hover);
+    box-shadow: 0 3px 8px rgba(81, 43, 212, 0.25);
+}
+
+.ui-btn:active:not(:disabled) {
+    background: var(--ui-primary-active);
+    transform: translateY(1px);
+}
+
+.ui-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--ui-focus-ring);
+}
+
+.ui-btn:disabled {
+    background: var(--ui-disabled-bg);
+    color: var(--ui-disabled-text);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* ---- CounterButton ------------------------------------- */
+.counter-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ui-gap);
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border: 1px solid var(--ui-border);
+    border-radius: var(--ui-radius);
+    background: var(--ui-surface);
+}
+
+.counter-button .count {
+    min-width: 2.5rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--ui-radius-pill);
+    background: var(--ui-primary-soft);
+    color: var(--ui-primary);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums; /* 桁が変わっても幅がぶれない */
+    text-align: center;
+}
