@@ -1,7 +1,9 @@
 ﻿@page "/"
+@rendermode InteractiveServer
+@using HelloBlazorServer.Components.Shared
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<CounterButton Label="追加" Step="2" Max="10"/>
